@@ -1,0 +1,7 @@
+comics: {
+  fingerpori: {
+    url: http://www.hs.fi/fingerpori/,
+    img_selector: div.strip img,
+    link_format: http://www.hs.fi/fingerpori/<%= img_basename %>
+  }
+}
