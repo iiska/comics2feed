@@ -41,13 +41,20 @@ module BottomFeeder
 
     def write_cache()
       cache = @strips.map{|s|s.config}
-
+      # Write to file
     end
 
     # Check if comic is updated and generate feed if needed.
     def update()
       n = parse_strip
       if not @strips.include?(n)
+        @strips << n
+        generate_rss
+        write_cache
+      end
+    end
+
+    def generate_rss
     end
   end
 
@@ -65,6 +72,12 @@ module BottomFeeder
         @comics << BottomFeeder::Comic.new(k,v)
       end
     end
+
+    def update_comics
+      @comics.each do |c|
+        c.update
+      end
+    end
   end
 end
 
@@ -76,4 +89,5 @@ end
 
 if $0 == __FILE__
   bf = BottomFeeder::Base.new(YAML.load_file(find_config_file))
+  bf.update_comics
 end
