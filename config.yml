@@ -1,7 +1,11 @@
-comics: {
-  fingerpori: {
-    url: http://www.hs.fi/fingerpori/,
-    img_selector: div.strip img,
-    link_format: http://www.hs.fi/fingerpori/<%= img_basename %>
-  }
-}
+cache_dir: .cache
+output_dir: rss
+comics:
+  fingerpori:
+    url: http://www.hs.fi/fingerpori/
+    image_selector: div.strip img
+    link_format: http://www.hs.fi/fingerpori/<%= @img_basename %>
+  viivijawagner:
+    url: http://www.hs.fi/viivijawagner/
+    image_selector: div.strip img
+    link_format: http://www.hs.fi/viivijawagner/<%= @img_basename %>
