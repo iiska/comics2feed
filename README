@@ -5,3 +5,10 @@ Add configuration for your favourite comics to config.yml
 
 Add cronjob which would run bottom_feeder.rb at some sane
 intervals. Eg. once per 4 hours.
+
+
+FAQ
+---
+
+Q. What is bottom feeder?
+A. It's a type of a fish.

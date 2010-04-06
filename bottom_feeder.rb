@@ -80,7 +80,7 @@ module BottomFeeder
 
     def generate_rss
       template = ERB.new(File.open("rss.xml.erb","r").read)
-      File.open("#{@name}.xml", "w") do |f|
+      File.open("#{@config['output_dir']}/#{@name}.xml", "w") do |f|
         f.puts(template.result(binding))
       end
     end
@@ -94,10 +94,10 @@ module BottomFeeder
     # 3. Add to cache if not found
     # 4. Update rss feed if needed
     def initialize(config)
-      puts config.to_yaml
       @comics = []
       config['comics'].each do |k,v|
         v['cache_dir'] = config['cache_dir']
+        v['output_dir'] = config['output_dir']
         @comics << BottomFeeder::Comic.new(k,v)
       end
     end
