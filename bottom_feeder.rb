@@ -6,7 +6,7 @@ require 'uri'
 require 'open-uri'
 
 require 'rubygems'
-require 'nokogiri'
+require 'hpricot'
 
 module BottomFeeder
 
@@ -56,12 +56,12 @@ module BottomFeeder
     end
 
     def parse_strip()
-      doc = Nokogiri::HTML(open(@url))
+      doc = open(@url) {|f| Hpricot(f)}
       sc = {}
-      sc['title'] = doc.css("title").text
-      sc['img_url'] = doc.css(@config['image_selector']).attr('src').value
+      sc['title'] = doc.at("title").inner_text
+      sc['img_url'] = doc.at(@config['image_selector'])['src']
       if (@config['link_selector'])
-        sc['link'] = doc.css(@config['link_selector']).attr('href').value
+        sc['link'] = doc.at(@config['link_selector'])['href']
       else
         sc['link_format'] = @config['link_format']
       end
