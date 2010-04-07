@@ -25,6 +25,22 @@ module BottomFeeder
         ERB.new(config['link_format']).result(binding)
     end
 
+    def hash
+      @link.hash
+    end
+
+    def eql?(a)
+      self == a
+    end
+
+    def equal?(a)
+      self == a
+    end
+
+    def ==(a)
+      @link == a.link and @img_url == a.img_url
+    end
+
     def to_yaml(e)
       {'link' => @link, 'title' => @title, 'img_url' => @img_url}.to_yaml(e)
     end
@@ -72,7 +88,7 @@ module BottomFeeder
     def update()
       n = parse_strip
       if not @strips.include?(n)
-        @strips << n
+        @strips.unshift(n)
         generate_rss
         write_cache
       end
