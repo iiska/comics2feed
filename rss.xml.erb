@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0">
   <channel>
-    <title><%= @name %></title>
+    <title><%= CGI.escapeHTML(@name) %></title>
     <link><%= @url %></link>
     <language><%= @language || "en" %></language>
     <% @strips.each do |strip| %>
     <item>
-      <title><%= strip.title %></title>
+      <title><%= CGI.escapeHTML(strip.title) %></title>
       <link><%= strip.link %></link>
       <guid><%= strip.link %></guid>
       <description>&lt;a href="<%= strip.link %>"&gt;&lt;img src="<%= strip.img_url %>" /&gt;&lt;/a&gt;</description>

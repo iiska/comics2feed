@@ -3,6 +3,7 @@
 require 'yaml'
 require 'erb'
 require 'uri'
+require 'cgi' # for html escape
 require 'open-uri'
 
 require 'rubygems'
