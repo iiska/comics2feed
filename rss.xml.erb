@@ -8,6 +8,9 @@
     <item>
       <title><%= CGI.escapeHTML(strip.title) %></title>
       <link><%= strip.link %></link>
+      <% if not strip.date.nil? %>
+      <pubDate><%= strip.date.strftime("%a, %d %B %Y %H:%M %z") %></pubDate>
+      <% end %>
       <guid><%= strip.link %></guid>
       <description>&lt;a href="<%= strip.link %>"&gt;&lt;img src="<%= strip.img_url %>" /&gt;&lt;/a&gt;</description>
     </item>
