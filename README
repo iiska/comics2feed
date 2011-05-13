@@ -14,3 +14,10 @@ FAQ
 
 Q. What is bottom feeder?
 A. It's a type of a fish.
+
+BUGS
+----
+
+1. RSS feed files contains all items ever published
+   - Feed item count should be restricted
+   - Cached items count should be restricted also
