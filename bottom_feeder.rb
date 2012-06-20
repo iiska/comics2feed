@@ -77,8 +77,7 @@ module BottomFeeder
     def load_cache()
       f = "#{@config['cache_dir']}/#{@name}.yml"
       if File.exist?(f)
-        cache = YAML.load_file(f)
-        @strips = cache.map{|c|Strip.new(c)} || []
+        @strips = YAML.load_file(f)
       else
         @strips = []
       end
