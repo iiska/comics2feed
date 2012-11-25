@@ -66,7 +66,12 @@ module BottomFeeder
       sc['title'] = doc.at("title").inner_text
       sc['img_url'] = doc.at(@config['image_selector'])['src']
       if (@config['link_selector'])
-        sc['link'] = doc.at(@config['link_selector'])['href']
+        if (@config['link_attr'])
+          link_attr = @config['link_attr']
+        else
+          link_attr = "href"
+        end
+        sc['link'] = doc.at(@config['link_selector'])[link_attr]
       else
         sc['link_format'] = @config['link_format']
       end
