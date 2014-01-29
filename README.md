@@ -1,3 +1,6 @@
+
+[![Dependency Status](https://gemnasium.com/iiska/comics2feed.png)](https://gemnasium.com/iiska/comics2feed)
+
 Usage
 -----
 
