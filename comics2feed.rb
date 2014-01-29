@@ -10,7 +10,7 @@ require 'rubygems'
 require 'bundler/setup'
 require 'hpricot'
 
-module BottomFeeder
+module Comics2Feed
 
   class Strip
     attr_reader :config
@@ -137,12 +137,12 @@ module BottomFeeder
 end
 
 def find_config_file()
-  ["~/.bottom_feeder.yml", "config.yml"].select{|f|
+  ["~/.comics2feed.yml", "config.yml"].select{|f|
     File.exist?(f)
   }.first
 end
 
 if $0 == __FILE__
-  bf = BottomFeeder::Base.new(YAML.load_file(find_config_file))
+  bf = Comics2Feed::Base.new(YAML.load_file(find_config_file))
   bf.update_comics
 end

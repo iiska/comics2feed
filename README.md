@@ -3,17 +3,9 @@ Usage
 
 Add configuration for your favourite comics to config.yml
 
-Add cronjob which would run bottom_feeder.rb at some sane
+Add cronjob which would run comics2feed.rb at some sane
 intervals. Eg. once per 4 hours.
 
-Note: You probably have to include also GEM_HOME and GEM_PATH
-environment variables in your crontab.
-
-FAQ
----
-
-Q. What is bottom feeder?
-A. It's a type of a fish.
 
 BUGS
 ----
