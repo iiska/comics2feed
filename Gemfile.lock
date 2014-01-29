@@ -1,5 +1,11 @@
+PATH
+  remote: .
+  specs:
+    comics2feed (0.2.0)
+      hpricot (~> 0.8.6)
+
 GEM
-  remote: http://rubygems.org/
+  remote: https://rubygems.org/
   specs:
     hpricot (0.8.6)
 
@@ -7,4 +13,4 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  hpricot
+  comics2feed!

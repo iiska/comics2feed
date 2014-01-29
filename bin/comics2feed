@@ -1,0 +1,7 @@
+#! /bin/env ruby
+
+$:.unshift File.join(File.dirname(__FILE__), *%w{.. lib})
+
+require 'comics2feed'
+
+Comics2Feed::Base.new.update_comics
