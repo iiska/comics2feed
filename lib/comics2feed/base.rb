@@ -30,9 +30,10 @@ module Comics2Feed
     end
 
     def find_config_file
-      ["~/.comics2feed.yml", "config.yml"].select{|f|
+      [File.join(Dir.home, ".comics2feed.yml"),
+       File.join(Dir.pwd, "config.yml")].select do |f|
         File.exist?(f)
-      }.first
+      end.first
     end
   end
 end
