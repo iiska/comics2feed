@@ -1,5 +1,5 @@
 
-[![Dependency Status](https://gemnasium.com/iiska/comics2feed.png)](https://gemnasium.com/iiska/comics2feed)
+[![Build Status](https://travis-ci.org/iiska/comics2feed.png)](https://travis-ci.org/iiska/comics2feed) [![Dependency Status](https://gemnasium.com/iiska/comics2feed.png)](https://gemnasium.com/iiska/comics2feed)
 
 Usage
 -----
