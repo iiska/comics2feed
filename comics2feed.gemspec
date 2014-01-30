@@ -19,4 +19,7 @@ Gem::Specification.new 'comics2feed', Comics2Feed::VERSION do |s|
 
   s.required_ruby_version = ">= 1.9.3"
   s.add_runtime_dependency 'hpricot', '~> 0.8.6'
+
+  s.add_development_dependency 'rake'
+  s.add_development_dependency 'simplecov'
 end

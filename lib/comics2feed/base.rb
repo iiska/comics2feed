@@ -24,9 +24,7 @@ module Comics2Feed
     end
 
     def update_comics
-      @comics.each do |c|
-        c.update
-      end
+      @comics.each(&:update)
     end
 
     def find_config_file
